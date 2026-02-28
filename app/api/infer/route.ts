@@ -105,17 +105,17 @@ export async function POST(request: NextRequest) {
   let upstream: Response;
 
   try {
-    upstream = await fetch("https://router.huggingface.co/v1/chat/completions", {
+    upstream = await fetch(`https://router.huggingface.co/hf-inference/models/${model}`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model,
-        messages: [{ role: "user", content: prompt }],
-        max_tokens: 512,
-        temperature: 0.2,
+        inputs: prompt,
+        options: {
+          wait_for_model: true,
+        },
       }),
       cache: "no-store",
     });
