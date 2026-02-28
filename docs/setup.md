@@ -44,6 +44,6 @@ Then set environment variables in Vercel project settings:
 
 ## Troubleshooting
 
-- `MISSING_TOKEN`: set `HUGGINGFACE_API_TOKEN` locally or in Vercel.
+- No token configured: app returns demo-mode output; set `HUGGINGFACE_API_TOKEN` locally or in Vercel for live inference.
 - `RATE_LIMITED`: retry after a short delay or use lower-traffic model.
 - `MODEL_LOADING`: first request can take longer while model spins up.

@@ -16,7 +16,7 @@ Gradem8 HF Space 2 is a focused integration demo that routes browser prompts to 
 1. User submits prompt from browser UI.
 2. Client sends `POST /api/infer` with prompt and optional model.
 3. Server route validates prompt and model, then reads `HUGGINGFACE_API_TOKEN` from server environment.
-4. Server route calls `https://api-inference.huggingface.co/models/{model}`.
+4. Server route calls `https://router.huggingface.co/v1/chat/completions`.
 5. Server route maps provider response into normalized JSON:
    - success: `output`, `model`, `latencyMs`
    - error: `error`, `code`
@@ -31,6 +31,6 @@ Gradem8 HF Space 2 is a focused integration demo that routes browser prompts to 
 ## Reliability and failure handling
 
 - Empty prompt and invalid model rejected at API edge with `400`.
-- Missing server token returns explicit `500 MISSING_TOKEN`.
+- Missing server token returns a deterministic demo response so the UI remains usable.
 - Upstream transient errors are surfaced with normalized codes (`RATE_LIMITED`, `MODEL_LOADING`, `UPSTREAM_ERROR`).
 - UI presents recoverable error messages without crashing render flow.

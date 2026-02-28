@@ -9,6 +9,20 @@ type InferRequest = {
 };
 
 function extractOutput(payload: unknown): string {
+  if (payload && typeof payload === "object") {
+    const data = payload as Record<string, unknown>;
+    if (Array.isArray(data.choices) && data.choices.length > 0) {
+      const first = data.choices[0] as Record<string, unknown>;
+      const message = first.message as Record<string, unknown> | undefined;
+      if (message && typeof message.content === "string") {
+        return message.content;
+      }
+      if (typeof first.text === "string") {
+        return first.text;
+      }
+    }
+  }
+
   if (typeof payload === "string") {
     return payload;
   }
@@ -45,6 +59,20 @@ function extractOutput(payload: unknown): string {
   return "";
 }
 
+function buildDemoResponse(prompt: string, model: string, latencyMs: number) {
+  const preview = prompt.length > 300 ? `${prompt.slice(0, 300)}...` : prompt;
+  return {
+    output: [
+      "Demo mode response:",
+      "Set HUGGINGFACE_API_TOKEN in Vercel production env to enable live model inference.",
+      "",
+      `Prompt received: ${preview}`,
+    ].join("\n"),
+    model,
+    latencyMs,
+  };
+}
+
 export async function POST(request: NextRequest) {
   let body: InferRequest;
 
@@ -63,31 +91,31 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Prompt is too long. Keep it under 6000 characters.", code: "PROMPT_TOO_LONG" }, { status: 400 });
   }
 
-  const token = process.env.HUGGINGFACE_API_TOKEN;
-  if (!token) {
-    return NextResponse.json({ error: "Server is missing HUGGINGFACE_API_TOKEN.", code: "MISSING_TOKEN" }, { status: 500 });
-  }
-
   const model = (body.model?.trim() || process.env.HUGGINGFACE_MODEL_DEFAULT || FALLBACK_MODEL).trim();
   if (!MODEL_PATTERN.test(model)) {
     return NextResponse.json({ error: "Model identifier is invalid.", code: "INVALID_MODEL" }, { status: 400 });
+  }
+
+  const token = process.env.HUGGINGFACE_API_TOKEN;
+  if (!token) {
+    return NextResponse.json(buildDemoResponse(prompt, model, 0));
   }
 
   const start = Date.now();
   let upstream: Response;
 
   try {
-    upstream = await fetch(`https://api-inference.huggingface.co/models/${model}`, {
+    upstream = await fetch("https://router.huggingface.co/v1/chat/completions", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        inputs: prompt,
-        options: {
-          wait_for_model: true,
-        },
+        model,
+        messages: [{ role: "user", content: prompt }],
+        max_tokens: 512,
+        temperature: 0.2,
       }),
       cache: "no-store",
     });
