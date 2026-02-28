@@ -1,7 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const FALLBACK_MODEL = "meta-llama/Meta-Llama-3.1-8B-Instruct";
+const FALLBACK_MODEL = "meta-llama/Llama-3.1-8B-Instruct";
 const MODEL_PATTERN = /^[a-zA-Z0-9._/:+-]+$/;
+const MODEL_ALIASES: Record<string, string> = {
+  "meta-llama/Meta-Llama-3.1-8B-Instruct": "meta-llama/Llama-3.1-8B-Instruct",
+};
 
 type InferRequest = {
   prompt?: string;
@@ -73,6 +76,10 @@ function buildDemoResponse(prompt: string, model: string, latencyMs: number) {
   };
 }
 
+function normalizeModel(model: string): string {
+  return MODEL_ALIASES[model] || model;
+}
+
 export async function POST(request: NextRequest) {
   let body: InferRequest;
 
@@ -91,7 +98,9 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Prompt is too long. Keep it under 6000 characters.", code: "PROMPT_TOO_LONG" }, { status: 400 });
   }
 
-  const model = (body.model?.trim() || process.env.HUGGINGFACE_MODEL_DEFAULT || FALLBACK_MODEL).trim();
+  const model = normalizeModel(
+    (body.model?.trim() || process.env.HUGGINGFACE_MODEL_DEFAULT || FALLBACK_MODEL).trim()
+  );
   if (!MODEL_PATTERN.test(model)) {
     return NextResponse.json({ error: "Model identifier is invalid.", code: "INVALID_MODEL" }, { status: 400 });
   }
@@ -103,20 +112,19 @@ export async function POST(request: NextRequest) {
 
   const start = Date.now();
   let upstream: Response;
-  const modelPath = encodeURIComponent(model);
 
   try {
-    upstream = await fetch(`https://router.huggingface.co/hf-inference/models/${modelPath}`, {
+    upstream = await fetch("https://router.huggingface.co/v1/chat/completions", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        inputs: prompt,
-        options: {
-          wait_for_model: true,
-        },
+        model,
+        messages: [{ role: "user", content: prompt }],
+        max_tokens: 512,
+        temperature: 0.2,
       }),
       cache: "no-store",
     });

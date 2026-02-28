@@ -13,7 +13,7 @@ Create `.env.local` from `.env.example`.
 | Variable | Required | Default | Purpose |
 |---|---|---|---|
 | `HUGGINGFACE_API_TOKEN` | Yes | n/a | Server-only token for Hugging Face Inference API |
-| `HUGGINGFACE_MODEL_DEFAULT` | No | `meta-llama/Meta-Llama-3.1-8B-Instruct` | Default model used when client does not override |
+| `HUGGINGFACE_MODEL_DEFAULT` | No | `meta-llama/Llama-3.1-8B-Instruct` | Default model used when client does not override |
 
 ## Install and run locally
 

@@ -16,7 +16,7 @@ Gradem8 HF Space 2 is a focused integration demo that routes browser prompts to 
 1. User submits prompt from browser UI.
 2. Client sends `POST /api/infer` with prompt and optional model.
 3. Server route validates prompt and model, then reads `HUGGINGFACE_API_TOKEN` from server environment.
-4. Server route calls `https://router.huggingface.co/hf-inference/models/{model}`.
+4. Server route calls `https://router.huggingface.co/v1/chat/completions`.
 5. Server route maps provider response into normalized JSON:
    - success: `output`, `model`, `latencyMs`
    - error: `error`, `code`

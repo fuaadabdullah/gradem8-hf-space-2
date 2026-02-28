@@ -45,7 +45,7 @@ Request:
 ```json
 {
   "prompt": "Explain risk-to-reward ratio in 4 bullets.",
-  "model": "meta-llama/Meta-Llama-3.1-8B-Instruct"
+  "model": "meta-llama/Llama-3.1-8B-Instruct"
 }
 ```
 
@@ -54,7 +54,7 @@ Response:
 ```json
 {
   "output": "1. ...",
-  "model": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+  "model": "meta-llama/Llama-3.1-8B-Instruct",
   "latencyMs": 872
 }
 ```
