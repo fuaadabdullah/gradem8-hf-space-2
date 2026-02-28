@@ -103,9 +103,10 @@ export async function POST(request: NextRequest) {
 
   const start = Date.now();
   let upstream: Response;
+  const modelPath = encodeURIComponent(model);
 
   try {
-    upstream = await fetch(`https://router.huggingface.co/hf-inference/models/${model}`, {
+    upstream = await fetch(`https://router.huggingface.co/hf-inference/models/${modelPath}`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
