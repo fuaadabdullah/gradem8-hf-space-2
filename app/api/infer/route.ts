@@ -11,6 +11,34 @@ type InferRequest = {
   model?: string;
 };
 
+const RATE_LIMIT_WINDOW_MS = 60_000;
+const RATE_LIMIT_MAX_REQUESTS = 10;
+// Per-instance best effort only: Vercel runs multiple lambda instances with no shared
+// memory, so this caps abuse from a single warm instance rather than globally per IP.
+const requestLog = new Map<string, { count: number; resetAt: number }>();
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = requestLog.get(ip);
+
+  if (!entry || now > entry.resetAt) {
+    requestLog.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    return false;
+  }
+
+  if (entry.count >= RATE_LIMIT_MAX_REQUESTS) {
+    return true;
+  }
+
+  entry.count += 1;
+  return false;
+}
+
+function getClientIp(request: NextRequest): string {
+  const forwarded = request.headers.get("x-forwarded-for");
+  return forwarded?.split(",")[0]?.trim() || "unknown";
+}
+
 function extractOutput(payload: unknown): string {
   if (payload && typeof payload === "object") {
     const data = payload as Record<string, unknown>;
@@ -20,46 +48,35 @@ function extractOutput(payload: unknown): string {
       if (message && typeof message.content === "string") {
         return message.content;
       }
-      if (typeof first.text === "string") {
-        return first.text;
-      }
-    }
-  }
-
-  if (typeof payload === "string") {
-    return payload;
-  }
-
-  if (Array.isArray(payload) && payload.length > 0) {
-    const first = payload[0] as Record<string, unknown>;
-    if (typeof first?.generated_text === "string") {
-      return first.generated_text;
-    }
-    if (typeof first?.text === "string") {
-      return first.text;
-    }
-  }
-
-  if (payload && typeof payload === "object") {
-    const data = payload as Record<string, unknown>;
-    if (typeof data.generated_text === "string") {
-      return data.generated_text;
-    }
-    if (typeof data.summary_text === "string") {
-      return data.summary_text;
-    }
-    if (typeof data.translation_text === "string") {
-      return data.translation_text;
-    }
-    if (typeof data.answer === "string") {
-      return data.answer;
-    }
-    if (typeof data.text === "string") {
-      return data.text;
     }
   }
 
   return "";
+}
+
+function extractUpstreamError(payload: unknown, status: number): string {
+  if (payload && typeof payload === "object") {
+    const body = payload as Record<string, unknown>;
+
+    if (typeof body.error === "string") {
+      return body.error;
+    }
+
+    if (
+      body.error &&
+      typeof body.error === "object" &&
+      "message" in body.error &&
+      typeof (body.error as Record<string, unknown>).message === "string"
+    ) {
+      return (body.error as Record<string, unknown>).message as string;
+    }
+
+    if (typeof body.message === "string") {
+      return body.message;
+    }
+  }
+
+  return `Hugging Face request failed with status ${status}.`;
 }
 
 function buildDemoResponse(prompt: string, model: string, latencyMs: number) {
@@ -81,6 +98,13 @@ function normalizeModel(model: string): string {
 }
 
 export async function POST(request: NextRequest) {
+  if (isRateLimited(getClientIp(request))) {
+    return NextResponse.json(
+      { error: "Too many requests. Please wait a minute and try again.", code: "TOO_MANY_REQUESTS" },
+      { status: 429 }
+    );
+  }
+
   let body: InferRequest;
 
   try {
@@ -138,10 +162,7 @@ export async function POST(request: NextRequest) {
   const payload = isJson ? await upstream.json() : await upstream.text();
 
   if (!upstream.ok) {
-    const message =
-      typeof payload === "object" && payload && "error" in payload && typeof (payload as { error?: unknown }).error === "string"
-        ? (payload as { error: string }).error
-        : `Hugging Face request failed with status ${upstream.status}.`;
+    const message = extractUpstreamError(payload, upstream.status);
 
     const code =
       upstream.status === 429
