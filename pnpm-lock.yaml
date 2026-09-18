@@ -14,6 +14,9 @@ importers:
       '@napi-rs/canvas':
         specifier: ^1.0.9
         version: 1.0.9
+      '@napi-rs/canvas-linux-x64-gnu':
+        specifier: 1.0.9
+        version: 1.0.9
       mammoth:
         specifier: ^1.12.3
         version: 1.12.3
@@ -2427,8 +2430,7 @@ snapshots:
   '@napi-rs/canvas-linux-x64-gnu@0.1.80':
     optional: true
 
-  '@napi-rs/canvas-linux-x64-gnu@1.0.9':
-    optional: true
+  '@napi-rs/canvas-linux-x64-gnu@1.0.9': {}
 
   '@napi-rs/canvas-linux-x64-musl@0.1.80':
     optional: true
