@@ -65,6 +65,25 @@ Response:
 }
 ```
 
+## Limitations
+
+GradeM8 provides **grading assistance, not authoritative academic decisions**. It proposes criterion scores, evidence and feedback; an instructor must review each report and accept the total before a grade is finalized. The recomputed total and the `teacher-approved` label are client-side conveniences, not a server-side attestation.
+
+**Performance has been evaluated against 0 human-scored essays.** The benchmark (60 synthetic essays plus 4 injection probes), the evaluation harness and the release gate exist; human reference labels do not. There is therefore **no accuracy figure for this project**, the accuracy gates report NOT MEASURED, and the last recorded end-to-end run was demo mode (no model call) with a verdict of NOT READY.
+
+**Scores may vary between model versions.** Every report records its `model_version`, decoding runs at `temperature: 0.1` rather than 0, and hosted weights change under a stable model name, so a result is only meaningful for the model, engine version, rubric and date that produced it.
+
+Known weaknesses, each with the review step that compensates for it:
+
+- **Ambiguous rubrics**: unparsable criteria are rejected rather than guessed, but vague descriptors with no points are simply ignored.
+- **Image-heavy PDFs**: extraction is text-only, with no OCR, table or footnote reconstruction.
+- **Highly technical writing**: the rubric is the only domain context, and no technical writing is in the benchmark.
+- **Unusual formatting**: structure criteria assume normal blank-line prose.
+- **Extremely long submissions**: 30,000 characters per submission, 5 MB per file, 20 submissions per request, 45 s provider timeout.
+- Plus regex prompt-injection detection, heuristic demo mode, untested 100-point or weighted scales, an unverified WCAG 2.2 AA target, no monitoring or drift detection, and provider retention terms that GradeM8 cannot vouch for.
+
+Full detail, measured numbers, the NIST AI RMF test/evaluation/verification/validation/monitoring status, and a pre-use checklist are in [LIMITATIONS.md](LIMITATIONS.md).
+
 ## Impact
 
 Demo outcomes and practical use cases are in [docs/impact.md](docs/impact.md).
@@ -74,6 +93,7 @@ Demo outcomes and practical use cases are in [docs/impact.md](docs/impact.md).
 - [Architecture](docs/architecture.md)
 - [Setup](docs/setup.md)
 - [Impact](docs/impact.md)
+- [Limitations](LIMITATIONS.md)
 - [Standards baseline](docs/standards.md)
 - [Privacy and retention](docs/privacy.md)
 - [Grading integrity contract](docs/grading-integrity.md)

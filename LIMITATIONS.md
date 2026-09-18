@@ -148,3 +148,28 @@ The practical consequence: **v1 is test- and document-oriented, not monitoring-o
 exists for the integrity invariants (server-owned maxima and totals, sanitized output, fail-closed
 validation). Validation against human judgment does not exist yet. Anyone describing this project's
 reliability should cite the tests and the unmeasured gates together, never the tests alone.
+
+## 6. Checklist before a score is used for anything real
+
+1. Is the submission fully extracted, and does the extracted text match the original?
+2. Did the parsed rubric list match your intent, including every maximum?
+3. Did the report set `integrity.requires_human_review`, or flag injection signals, clamping, unmatched
+   criteria or a positional fallback?
+4. Does each criterion have evidence quoted from the essay, and does that evidence actually support the score?
+5. Was the run made with the model version, engine version and rubric you think it was?
+6. Has an instructor read the report, adjusted the scores and accepted the total?
+7. If a claim about accuracy is being made: do human labels exist for a comparable corpus, and does the
+   report quote its denominator, scale, reference and interval?
+
+If any answer is no, the score is a draft, not a grade.
+
+## 7. Related documents
+
+- [README](./README.md): what the product is and how to run it.
+- [Grading integrity contract](./docs/grading-integrity.md): module-level limitations for the prompt,
+  detection, validation and rate-limit layers, plus the tests that enforce each claim.
+- [Evaluation suite](./eval/README.md): metrics, release gates and the current "what you may claim" state.
+- [Standards baseline](./docs/standards.md): NIST AI RMF, OWASP Top 10 / GenAI Top 10, WCAG 2.2 AA and the
+  FERPA boundary.
+- [Privacy and retention](./docs/privacy.md): what is stored, for how long, and the school deployment gate.
+- [Architecture](./docs/architecture.md): trust boundaries and request flow.
