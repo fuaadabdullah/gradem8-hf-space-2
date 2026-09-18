@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import mammoth from "mammoth";
-import { PDFParse } from "pdf-parse";
 import { MAX_RUBRIC_CHARS, parseRubricText } from "../../../lib/grading/rubric";
 import { MAX_ESSAY_CHARS } from "../../../lib/grading/prompt";
 import {
@@ -65,6 +64,7 @@ async function extract(file: File) {
   if (ext === "txt") return buffer.toString("utf8").trim();
   if (ext === "docx") return (await mammoth.extractRawText({ buffer })).value.trim();
   if (ext === "pdf") {
+    const { PDFParse } = await import("pdf-parse");
     const parser = new PDFParse({ data: buffer });
     try {
       return (await parser.getText()).text.trim();
