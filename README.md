@@ -1,24 +1,16 @@
-# Gradem8 HF Space 2
+# GradeM8
 
-Canonical repository for the Gradem8 Hugging Face Space integration demo.
+GradeM8 is a deliberately narrow essay-grading workspace: provide a rubric and one or more papers, inspect the extracted text, review rubric-grounded feedback, override the total when needed, and download the report.
 
-This project demonstrates a production-style Next.js integration with the Hugging Face Inference API using a secure server route.
-
-## Value proposition
-
-This demo provides a clear reference implementation for connecting product-facing UI with hosted model inference while keeping API tokens server-side.
-
-## Screenshots
-
-![Gradem8 hero interface](docs/images/hero.webp)
-![Inference form and model selector](docs/images/feature-01.webp)
-![Generated output and latency panel](docs/images/feature-02.webp)
+This is a portfolio/demo implementation, not a school-approved FERPA service.
 
 ## Stack
 
-- Next.js 14
+- Next.js 15.5.24
 - TypeScript
-- Server-side Hugging Face inference route (`POST /api/infer`)
+- Server-side grading route (`POST /api/grade`)
+- PDF, DOCX, and TXT extraction
+- Optional server-side Hugging Face inference
 - Vercel deployment
 
 ## Architecture
@@ -34,21 +26,21 @@ pnpm dev
 
 ## Testing
 
-The API route has focused Vitest coverage for request validation, model aliasing, demo mode, rate limiting, upstream failures, and normalized responses.
-
 ```bash
 pnpm test
 ```
 
-The model selector intentionally presents two curated choices for this demo. The server accepts any valid Hugging Face model identifier and can use `HUGGINGFACE_MODEL_DEFAULT` when no model is supplied.
-
-The root `code-security.datadog.yaml` file is an intentional SAST configuration for repository security scanning.
+The test suite covers grading input boundaries, file extraction, rubric parsing, server-side score validation, prompt-injection defenses, evaluation fixtures, and the legacy inference route. The root `code-security.datadog.yaml` file is an intentional SAST configuration for repository security scanning.
 
 ## Deployment
 
 Deployment prerequisites and environment setup are documented in [docs/setup.md](docs/setup.md).
 
 ## API
+
+`POST /api/grade` accepts a multipart form with `rubric`, optional pasted `essay`, and zero or more `files` fields. Supported files are PDF, DOCX, and TXT. The route returns extracted text and one report per submission.
+
+The legacy inference endpoint remains available as an integration fixture:
 
 `POST /api/infer`
 
@@ -80,6 +72,10 @@ Demo outcomes and practical use cases are in [docs/impact.md](docs/impact.md).
 - [Architecture](docs/architecture.md)
 - [Setup](docs/setup.md)
 - [Impact](docs/impact.md)
+- [Standards baseline](docs/standards.md)
+- [Privacy and retention](docs/privacy.md)
+- [Grading integrity contract](docs/grading-integrity.md)
+
 
 ## Contact
 

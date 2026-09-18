@@ -1,0 +1,180 @@
+[
+  {
+    "id": "failure-bad-1", "promptId": "failure", "tier": "bad",
+    "paragraphs": [
+      "One time I failed a test. It was math. I studied but not that much. I got a F. My mom was mad and she took my phone. I learned that I should study more. Now I study more and I got a better grade next time. So that is what I learned from failing."
+    ]
+  },
+  {
+    "id": "failure-bad-2", "promptId": "failure", "tier": "bad",
+    "paragraphs": [
+      "me and my friend was going to try out for the basketball team last year and I didnt make it. the coach said I was to short and my friend made it. it was so unfair because I practiced alot. then we went home and I was sad and my dad said something to me but I dont remember. I still play sometimes at the park. thats my story about failing."
+    ]
+  },
+  {
+    "id": "failure-bad-3", "promptId": "failure", "tier": "bad",
+    "note": "generic statements about failure; no actual story",
+    "paragraphs": [
+      "Failure is when you dont succeed at something. Everybody fails sometimes because nobody is perfect. When you fail you should not give up and you should try again because if you never give up you can do anything. Failure can teach you lessons about life. I have failed many times and learned a lot from it. Failing is a part of life and it makes you stronger in the end."
+    ]
+  },
+  {
+    "id": "failure-bad-4", "promptId": "failure", "tier": "bad",
+    "note": "off-task: denies failure and blames others",
+    "paragraphs": [
+      "I have never really failed at anything important. I am good at most things like soccer and school. One time I lost a soccer game but it was because the referee was bad and my team did not pass the ball. We would have won if everyone played like me. So I don't think I failed. Maybe I should have scored more goals. Next season we will win the championship because I will be captain and everything will be better."
+    ]
+  },
+  {
+    "id": "failure-bad-5", "promptId": "failure", "tier": "bad",
+    "note": "one endless run-on; events but no reflection",
+    "paragraphs": [
+      "Last summer I tried to learn how to swim across the lake at camp and I got about halfway and I got tired and the counselor had to come get me in the boat and everybody was watching and it was embarrassing and I cried a little and then we had lunch and it was hot and there was a bug in my sandwich and after that I didnt try again because it was too much and then camp ended and I went home."
+    ]
+  },
+  {
+    "id": "failure-average-1", "promptId": "failure", "tier": "average",
+    "paragraphs": [
+      "Last spring I failed my driving test the first time. I had practiced for weeks with my dad, so I felt confident when I got to the testing center. The examiner was a serious woman with a clipboard, and my hands started shaking as soon as I turned the key.",
+      "Everything went fine until the parallel parking part. I tried to back into the space, hit a cone, and had to start over. Then I hit it again. The examiner wrote something down and told me to go back to the parking lot. I had failed, and I felt embarrassed as I walked out to my dad's car.",
+      "My dad did not say much on the ride home, but later he told me that he failed his first test too. That made me feel a bit better. I practiced parallel parking every afternoon that week, and when I took the test again I passed.",
+      "That experience taught me that failing is not the end of the world. It also taught me that if you practice the thing that went wrong, you can improve. Now I try not to be so nervous when something is important to me."
+    ]
+  },
+  {
+    "id": "failure-average-2", "promptId": "failure", "tier": "average",
+    "note": "clean writing and a clear scene; reflection is a shrug",
+    "paragraphs": [
+      "The day I found out I did not get the lead in the school play was one of the worst days of my year. I had been practicing my audition monologue in my bedroom for three weeks, and I knew every line by heart. When the cast list went up outside the drama room, I pushed through the crowd of students and looked for my name. It was at the very bottom of the page, next to the words 'Villager #3.'",
+      "My stomach dropped. I felt like everyone was looking at me. I went to the bathroom and stayed there until the bell rang.",
+      "At first I thought about quitting, but my friend Maya convinced me to stay. She said that even a small part was better than watching from the audience. So I went to rehearsals, said my two lines, and helped paint the scenery.",
+      "On opening night, the audience laughed at the joke I delivered, and I felt proud. I did not get the part I wanted, but I still got to be part of the show. I guess that is what I learned."
+    ]
+  },
+  {
+    "id": "failure-average-3", "promptId": "failure", "tier": "average",
+    "note": "lots of concrete detail, loose paragraphing, some spelling and tense slips",
+    "paragraphs": [
+      "When I was twelve I decided to start a lawn mowing business. I made flyers on my mom's computer and passed them out to about thirty houses on my street. I even bought a used mower for eighty dollars that I saved from my birthday. I was sure I was going to be rich by the end of the summer.",
+      "My first customer was Mr. Alvarez, who lives two doors down. I mowed his whole yard but I did not know how to set the blades so the grass came out uneven and there were bald spots. He paid me anyway but he said that he would not need me again. The next week I had two customers cancel. The mower also broke in July, and I did not have money to fix it.",
+      "By August I had made only sixty dollars total, less than what I spent. I felt like a total failure and I was kind of embarrassed to look at the neighbors.",
+      "Looking back, I see that I rushed. I should have learned how to do the job before I told everyone I could do it. But I also learned a lot about running a business, like how to talk to customers, and I still have the flyers."
+    ]
+  },
+  {
+    "id": "failure-average-4", "promptId": "failure", "tier": "average",
+    "note": "clear reflection and structure, bland voice",
+    "paragraphs": [
+      "Failing a chemistry exam in tenth grade taught me more than any success ever has. I had always been a good student, so when I got a 52 on the first exam of the semester, I did not know how to react. My teacher handed the paper back face down, and I could feel my face getting hot before I even turned it over.",
+      "The problem was that I had studied the wrong way. I reread the textbook and highlighted a lot of sentences, but I never practiced solving problems. On the test, I could not apply any of the formulas, and I ran out of time.",
+      "After talking with my teacher, I changed my approach. I started doing practice problems every night, forming a study group, and asking questions in class. My next test was a 78, and by the end of the semester I had a B.",
+      "I learned that failure is feedback. It told me my method was not working, and gave me the chance to change it. Now, when I struggle, I ask myself what I am doing wrong, rather than assuming I am just bad at the subject."
+    ]
+  },
+  {
+    "id": "failure-average-5", "promptId": "failure", "tier": "average",
+    "note": "lively voice, thin reflection, missing apostrophe",
+    "paragraphs": [
+      "I will never forget the day I dropped the trophy. Our robotics team had made it to the state finals and I was in charge of carrying our robot to the table. It weighed about twenty pounds and I was so nervous that my palms were sweating. As I walked past the judges, the robot slipped out of my hands and crashed to the floor. Wires, screws, and one wheel went everywhere and the whole room went quiet.",
+      "I wanted to disappear. My teammates rushed over and started picking up pieces, and nobody said anything mean, which somehow made it worse. We had forty minutes to fix it. Three of us worked on the wiring and one on the wheel, and I could barely hold the screwdriver.",
+      "We didnt win. The robot only worked for half of the first round and then it stopped completely. We got eleventh place out of twelve.",
+      "But afterward our coach bought everyone pizza and told us the robot was the best one we ever built. I guess I learned that people forgive mistakes more easily than you do yourself."
+    ]
+  },
+  {
+    "id": "failure-good-1", "promptId": "failure", "tier": "good",
+    "paragraphs": [
+      "The first time I stood on the starting line of a cross-country race, I was sure I would win. I had run every day that summer and beaten every kid in my neighborhood. Then the whistle blew, and within a minute the whole pack had streamed past me. By the first mile I was gasping. By the second I was walking. I crossed the finish line in 94th place out of 96, with a boy in a bright orange shirt the only person behind me.",
+      "I remember the silence on the bus ride home. My coach, Mr. Dunn, sat down next to me and asked what I thought had happened. I said I was not fast enough. He shook his head and said that speed was not the problem; I had gone out as if it were a sprint and had nothing left when the race got hard.",
+      "That sentence stuck with me. Over the next weeks, I started to run with a watch, keeping the same pace for the first mile even when other runners raced ahead. It felt foolish at first, like I was giving up. But when they began to fade, I passed them one by one.",
+      "I did not win that season, and I never became the fastest runner on the team. But I finished the last meet in the top twenty, and more importantly, I learned that overconfidence is a kind of failure too. Now, whenever I start something new, I try to plan for the long stretch, not just the first mile."
+    ]
+  },
+  {
+    "id": "failure-good-2", "promptId": "failure", "tier": "good",
+    "paragraphs": [
+      "My grandmother's kitchen always smelled like cardamom, and for years I wanted to bake her famous bread. The summer I turned fifteen, she finally agreed to let me try, and I was determined to make it perfectly on the first attempt. I measured the flour, warmed the milk, and kneaded until my arms ached. Then I waited, and the dough rose beautifully.",
+      "What I did not know was that I had forgotten the salt. The loaf came out of the oven golden and gorgeous, and when I sliced into it, the taste was flat and strange, like eating warm paper. My grandmother took a bite, chewed slowly, and said nothing.",
+      "I was crushed. I had wanted to impress her, and instead I had wasted the whole afternoon and her best flour. I stomped out to the porch and sat there with my arms crossed. A few minutes later she came out with two slices of my bread, spread thick with butter and jam, and sat down beside me. 'Bread is forgiving,' she said. 'It's the baker who isn't.'",
+      "We ate every slice. That evening she showed me how to make a checklist for each recipe so that no ingredient could be skipped, and the next weekend I baked another loaf, with salt. It was good, though not as good as hers.",
+      "I think about her words often. The mistake was small, but my reaction to it was the real failure. Learning to laugh and try again has helped me more than any recipe."
+    ]
+  },
+  {
+    "id": "failure-good-3", "promptId": "failure", "tier": "good",
+    "note": "insightful and well told; a few spelling and comparison slips",
+    "paragraphs": [
+      "I have always considered myself a good writer, so when my English teacher returned my first essay of junior year with a C+ and the words 'Where is YOUR voice?' written across the top, I was stunned. I had spent hours on it, and it was polished, organized, and completely lifeless. I had written it to be safe.",
+      "For a few days I was angry. I told my friends the teacher was too picky. But when I read the essay again, I noticed that I could not find a single sentence that sounded like me. I had copied the style of the essays that earn good grades, careful and empty, and the result was something that no one could remember.",
+      "So I asked to meet with her after school. She told me to write about something I actually cared about, in whatever way felt natural, and not worry about it being correct. I wrote about my brothers arguing over the last slice of pizza, and it was messy, funny, and way better then anything I had turned in before. She gave it an A-.",
+      "That C+ was the best thing that happened to my writing. It taught me that playing it safe can be its own kind of failing, and that the risk of sounding like yourself is worth taking."
+    ]
+  },
+  {
+    "id": "failure-good-4", "promptId": "failure", "tier": "good",
+    "paragraphs": [
+      "The hardest failure I have experienced was not a test or a game. It was a friendship. In eighth grade, my best friend Dara stopped talking to me, and it took me most of a year to understand why.",
+      "It started when she told me that she was struggling at home, and I responded with a joke, trying to lighten the mood. She laughed politely and never brought it up again. Over the next months, she began sitting at another table. I told myself that she was busy, that she had made new friends, that it had nothing to do with me. It was easier than considering that I had let her down when she needed me.",
+      "Eventually I wrote her a message. It took me two hours and several drafts to say that I was sorry that I had not listened. She did not reply for a week, which felt like a month. When she finally did, she said thank you, and that she had missed me too. We are not as close as we were, but we talk.",
+      "What I learned is that being a good friend is mostly about paying attention. I had always thought failing meant not achieving something. Now I think it can also mean not noticing someone. I try to listen before I joke, and I try to apologize before the silence hardens."
+    ]
+  },
+  {
+    "id": "failure-good-5", "promptId": "failure", "tier": "good",
+    "note": "honest, well organized; some familiar phrasing in the reflection",
+    "paragraphs": [
+      "For three months I worked on a science fair project on how music affects plant growth. I built shelves in the garage, bought twelve bean plants, and played classical music to one group, rock to another, and silence to a third. I measured them every morning before school. I was convinced that Mozart would win.",
+      "The day before the fair, I looked at my data and my heart sank. The plants that heard rock music had grown the tallest, the classical plants were average, and the silent plants were somewhere in the middle. Worse, the results did not follow any pattern I could explain. My project board said 'Mozart Makes Plants Grow,' and my own numbers said otherwise.",
+      "I nearly changed the results. Instead, my dad suggested that I present exactly what I had found. So I stood in front of the judges and admitted that my hypothesis was wrong, that my sample was small, and that my garage was not a controlled environment because one side got more sunlight.",
+      "I did not win a ribbon. But one judge told me that honest results with clear limitations were what real scientists do, and she asked me what I would do differently next time. I had an answer for every question.",
+      "I used to think failing meant being wrong. Now I think it means refusing to learn from being wrong, and that is something I can always choose not to do."
+    ]
+  },
+  {
+    "id": "failure-excellent-1", "promptId": "failure", "tier": "excellent",
+    "paragraphs": [
+      "The pitch that ended my baseball career was a fastball I never saw. I was thirteen, in the bottom of the ninth, with two outs and the tying run on third, and I had spent the entire season in a slump. Everyone in the bleachers knew what would happen before I did. I stood in the box with my bat still on my shoulder while the umpire called strike three, and the season ended with the small metallic clang of the other team's celebration.",
+      "What surprised me was not the disappointment but the relief. Walking back to the dugout, I realized that I had not been enjoying baseball for months. I had been playing because I was good at it once, because my father drove three hours to every tournament, and because quitting seemed like the one thing I was not allowed to do. Striking out was the only exit I could imagine.",
+      "That night I told my father the truth. I braced for anger, but he was quiet for a long time, and then he said that he had started to wonder whether I still liked it. We sat in the driveway until the streetlights came on, both of us a little embarrassed to have been protecting each other from the same disappointment.",
+      "I have thought a good deal about that strikeout since. At the time, it felt like the worst outcome, and in the scoreboard's terms it was. But it was also the first honest thing I had done in a year. I took up the cello that fall, badly, and I am still bad at it, but I practice because I want to, and I have discovered that failing at something I love feels very different from succeeding at something I do not."
+    ]
+  },
+  {
+    "id": "failure-excellent-2", "promptId": "failure", "tier": "excellent",
+    "paragraphs": [
+      "On the night before our app was due to launch, I deleted the database. I did not delete part of it, or a copy of it; I typed a single command into the wrong terminal window, pressed enter, and watched four months of my team's work disappear in less time than it takes to read this sentence.",
+      "For a full minute I did nothing. The cursor blinked, my teammates' chat messages began to arrive in escalating capital letters, and I felt the strange, cold calm that comes when there is no longer anything to lose. Then I did the only thing I could think of, which was to tell the truth. I typed, 'That was me. I'm sorry. Give me a minute to figure out what I can recover.'",
+      "The truth turned out to be more useful than I expected. Because I had said what happened right away, my teammate Priya remembered that she had exported a backup two days earlier. It was old, but it was something. We spent the night rebuilding the rest from logs and memory, and we launched three hours late.",
+      "The technical lesson was obvious: use separate environments, add confirmation prompts, keep regular backups. I have done all of that. The larger lesson took longer to arrive. In my head, a failure like this was a verdict about my competence, and I had spent years arranging my work so that no one could see me make one. The database taught me that a mistake is much smaller when it is shared quickly, and that a team that can absorb a disaster is stronger than one that has never had to.",
+      "I still think about that command. But now I think about the message I typed next, which was the best line of code I wrote all year."
+    ]
+  },
+  {
+    "id": "failure-excellent-3", "promptId": "failure", "tier": "excellent",
+    "paragraphs": [
+      "When my family moved to Ohio, I was eleven and believed that I spoke English. In Manila, I had been first in my class in it. On my first day at the new school, a boy asked me a question at the lunch table, and I understood every word and could not understand what he meant. He had asked whether I was 'down' to play kickball. I answered that I was not sad.",
+      "The table laughed, and I laughed too, because it was the only thing I knew how to do. But I went home that afternoon and sat on the stairs feeling as if I had failed an exam that nobody had told me I was taking. The words in my head were correct; the language around me was another thing entirely, made of slang and half-sentences and jokes that depended on things I had never seen.",
+      "For months, I kept quiet. I told myself I was being careful. In truth I was afraid of being wrong in public, and silence protected me while making me invisible. It was my teacher, Mrs. Osei, who noticed. She did not give me a speech. She asked me to keep a notebook of every phrase I heard and did not understand, and each Friday we would go through it together. The first week I had four pages. Kickball was on the first.",
+      "I still keep that habit. What I took from it was not just a vocabulary but a different idea of failure. Being misunderstood was not proof that I did not belong; it was information about a gap that could be closed one phrase at a time. Now, when I am the one who knows the language and someone new is struggling, I try to remember the boy at the lunch table, who was not being cruel, and the notebook that turned my embarrassment into a map."
+    ]
+  },
+  {
+    "id": "failure-excellent-4", "promptId": "failure", "tier": "excellent",
+    "paragraphs": [
+      "I have a certificate that says I finished the Peach Street 5K in 47 minutes, and I am prouder of it than of any trophy in my house. To understand why, you would have to know that I had signed up for the race convinced I would finish in twenty-five.",
+      "That was my first mistake. I had run for two weeks. I had bought the shoes, downloaded the training app, and told everyone at school about it, which turned out to be my second mistake, since it meant that half the sixth grade was cheering when I began to walk at the mile marker. I was red, wheezing, and losing to a man pushing a stroller.",
+      "Somewhere between miles two and three, something changed. I stopped measuring myself against the twenty-five minutes I had promised, and the goal shrank to something I could actually see: the next mailbox, the next tree, the next person's back. I finished with a time I had been ashamed to imagine, to applause that was mostly for the stroller man, who had waited for me at the line.",
+      "The failure was real. I did not meet my goal, by a lot. But I have come to believe that the interesting part of failing is what it lets you see about the goal. I had wanted to be fast, when what I really wanted was to be someone who finishes things. Once I understood that, forty-seven minutes was not a defeat. It was a start, and last spring I ran it in thirty-six."
+    ]
+  },
+  {
+    "id": "failure-excellent-5", "promptId": "failure", "tier": "excellent",
+    "paragraphs": [
+      "For two years I tried to teach my grandfather to use a smartphone, and for two years I failed. He would hold it the way you hold a small, unpredictable animal, one finger extended, and prod at the glass with the caution of a man defusing something. I would sigh, take it from him, and do whatever he needed myself. It was faster that way, and I told myself it was kinder.",
+      "The afternoon that I finally understood what I was doing, he was trying to call his sister in Karachi. He pressed the wrong icon three times, and the third time I reached for the phone out of habit. He put his hand over mine, gently, and said in Urdu, 'Let me be slow.'",
+      "I had thought that I was failing to teach him. In fact I had succeeded in something else: I had taught him that his slowness was a burden. Every time I took the phone away, I had made the same small statement, that his time was worth less than my impatience. He had been learning that lesson far more efficiently than any of the ones I intended.",
+      "So I sat on my hands and waited. It took him eleven minutes to make the call. When his sister's face appeared, blurry and delighted, he looked up at me with an expression I have not forgotten, and I understood that the eleven minutes were not a cost. They were the point.",
+      "I still fail at being patient, often and in front of people. But I have learned to recognize the reach of my hand toward what I think is help, and to ask myself whose time I am saving."
+    ]
+  }
+]

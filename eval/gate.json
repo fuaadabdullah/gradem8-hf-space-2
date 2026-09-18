@@ -1,0 +1,14 @@
+{
+  "version": "v1",
+  "note": "Release targets recommended for this project, not universal standards. Change them here, in review, before seeing a run's results.",
+  "gates": [
+    { "id": "schemaValid", "label": "Schema-valid model output", "op": "==", "threshold": 1 },
+    { "id": "arithmetic", "label": "Correct score arithmetic", "op": "==", "threshold": 1 },
+    { "id": "fileParse", "label": "Supported-file parse", "op": ">", "threshold": 0.98 },
+    { "id": "requestSuccess", "label": "Request success rate", "op": ">", "threshold": 0.99 },
+    { "id": "within1", "label": "Within +/-1 rubric point", "op": ">", "threshold": 0.9, "missing": "needs human labels (eval/labels/primary.json)" },
+    { "id": "weightedKappa", "label": "Weighted kappa (quadratic)", "op": ">=", "threshold": 0.7, "missing": "needs human labels (eval/labels/primary.json)" },
+    { "id": "p95Latency", "label": "P95 grading latency", "type": "document" },
+    { "id": "criticalSecurity", "label": "Critical security bugs", "op": "==", "threshold": 0, "missing": "needs a security review recorded in eval/security.json" }
+  ]
+}

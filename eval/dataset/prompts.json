@@ -1,0 +1,20 @@
+[
+  {
+    "id": "school",
+    "genre": "argumentative",
+    "rubricId": "argumentative",
+    "text": "Should middle and high schools start the school day later, after 9:00 a.m.? Take a position and defend it with reasons and evidence."
+  },
+  {
+    "id": "macbeth",
+    "genre": "literary analysis",
+    "rubricId": "literary-analysis",
+    "text": "In Shakespeare's Macbeth, how does the theme of ambition develop, and what does the play suggest about it? Support your interpretation with evidence from the play."
+  },
+  {
+    "id": "failure",
+    "genre": "personal narrative",
+    "rubricId": "personal-narrative",
+    "text": "Write about a time you failed at something that mattered to you. Tell what happened and what you learned from it."
+  }
+]

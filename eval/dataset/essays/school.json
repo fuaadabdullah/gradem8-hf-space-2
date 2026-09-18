@@ -1,0 +1,180 @@
+[
+  {
+    "id": "school-bad-1", "promptId": "school", "tier": "bad",
+    "paragraphs": [
+      "i think school should start later. because kids are tired in the morning and they cant focus. my brother is always sleeping in class and the teacher gets mad. also the bus comes really early. school should start later so people can sleep more that is my opinion. and also some kids have jobs. so yeah later is better"
+    ]
+  },
+  {
+    "id": "school-bad-2", "promptId": "school", "tier": "bad",
+    "paragraphs": [
+      "School starting time is a big issue. Many students have a lot of homework. Homework takes hours and teachers give too much of it. I have math and science and history every night. Also phones are a problem in class because people look at them. If teachers took the phones then students would learn more. Schools should also have better lunch. The pizza is always cold. In conclusion school is hard and there should be less homework and later start times maybe."
+    ]
+  },
+  {
+    "id": "school-bad-3", "promptId": "school", "tier": "bad",
+    "paragraphs": [
+      "Yes. Because it is better. Students wants more sleep. Sleep is good for you and everyone know that. Some people say no but they are wrong. Starting at 9 is good starting at 7 is bad. Teachers can also sleep more and be happy. If the school starts later then it will be good for everybody in the whole city and the world. The end."
+    ]
+  },
+  {
+    "id": "school-bad-4", "promptId": "school", "tier": "bad",
+    "paragraphs": [
+      "Should schools start later? I believe that schools should not start later, but they should start later because students are tired. If school starts later then students will go to bed later so it does not matter. Sleep is important, but school is also important. Some students play sports after school and it would end late. I don't know what is the best answer to be honest. Everyone has different opinions on this topic and I think they are all right."
+    ]
+  },
+  {
+    "id": "school-bad-5", "promptId": "school", "tier": "bad",
+    "paragraphs": [
+      "The question is should middle and high schools start the school day later after 9 a.m. This is a very important question that many people think about. There are many reasons why schools should or should not start later. In this essay I will talk about the reasons. First there are reasons. Second there are more reasons. Overall schools starting later is a topic that people have talked about for a long time and it is important for the future of students and schools."
+    ]
+  },
+  {
+    "id": "school-average-1", "promptId": "school", "tier": "average",
+    "paragraphs": [
+      "Schools should start after 9:00 a.m. because teenagers need more sleep to do well. Many students wake up at six in the morning to catch the bus, and by the time first period starts they are still tired.",
+      "Doctors say teenagers need about nine hours of sleep each night. Because their bodies naturally stay awake later, going to bed at nine is unrealistic for most of them. When school starts at 7:30, a lot of students only get six or seven hours. This can make it hard to pay attention and can even hurt their grades. I know that in my own first period class, many people put their heads down on their desks.",
+      "Some people say a later start would make the school day end later and interfere with sports and jobs. That is true, but the schedule could be adjusted so that practices still happen. Also, it is more important for students to learn than to have practice at a certain time.",
+      "In conclusion, a later start time would help students be healthier and more focused, so schools should make the change."
+    ]
+  },
+  {
+    "id": "school-average-2", "promptId": "school", "tier": "average",
+    "note": "clean conventions and structure, but generic and thin reasoning",
+    "paragraphs": [
+      "Should school start later? I say yes. Starting school later would give students more rest, more time for breakfast, and a calmer morning. Those are three good reasons.",
+      "First, rest. Everyone knows that tired people do not think well. A student who sleeps more will be able to concentrate in class. Second, breakfast. When school starts very early many students skip breakfast because there is no time, and then they are hungry during class. Third, mornings would be calmer. Parents would not have to rush their kids out the door and students would arrive in a better mood.",
+      "Of course, there are some problems. Bus schedules might have to change, and after school activities might end later. However, I think these problems can be solved if the school district plans carefully. Schools have solved harder problems before.",
+      "Overall, the benefits of starting school later are bigger than the costs. Schools should move their start time to after 9:00 a.m."
+    ]
+  },
+  {
+    "id": "school-average-3", "promptId": "school", "tier": "average",
+    "note": "some real evidence but loose organization and apostrophe/agreement slips",
+    "paragraphs": [
+      "There is a lot of research about teenagers and sleep, and I think it shows that school should start later. For example my health teacher told us that teenagers biological clocks shift so they get sleepy later at night. That means asking a 15 year old to wake up at 6 is like asking an adult to wake up at 4. Its really hard on the body.",
+      "Also, I read that some schools already changed their start time and the students got better grades and were absent less. I dont remember which schools. But it seems like it worked.",
+      "Another thing is that a later start would help students who work. Many of my friends have jobs and they get home late, so they sleep less then other kids. Some students also have to take care of younger siblings in the morning.",
+      "On the other hand, sports. Coaches might not like it, and the buses. But I still think later is better for students overall because of health and grades."
+    ]
+  },
+  {
+    "id": "school-average-4", "promptId": "school", "tier": "average",
+    "paragraphs": [
+      "I strongly believe middle and high schools should start after 9:00 a.m. The current schedule makes no sense for teenagers, and it is time for a change.",
+      "One reason is health. Teenagers who do not get enough sleep are more likely to be stressed, sick, and even depressed. Schools care about students well-being, so they should care about sleep too. Another reason is safety. Tired teenage drivers are more likely to have accidents in the early morning, and later start times could reduce that risk.",
+      "A third reason is that students learn better when they are awake. It is pointless to teach a difficult lesson to a class that is half asleep. Teachers would probably be happier too.",
+      "Some parents worry about work schedules. Parents who leave for work early would have to find a way to get their children to school later. This is a real issue, but it should not decide the whole question.",
+      "So that is why I think schools should start later."
+    ]
+  },
+  {
+    "id": "school-average-5", "promptId": "school", "tier": "average",
+    "paragraphs": [
+      "Some people think schools should start after 9:00 a.m., but I disagree. A later start would cause more problems than it solves.",
+      "First, a later start means a later end. If school begins at 9:00, it may not finish until 4:30. Students who play sports, do music, or have jobs would get home very late and have less time for homework. Sleep would not really improve because students would just stay up later to finish everything.",
+      "Second, families would struggle. Many parents start work at 8:00 and cannot drive their kids to school after that. Younger siblings in elementary school would still start early, so families would have children leaving at different times, which is confusing.",
+      "Finally, students should learn to manage their time. In college and in jobs, they will have to get up early no matter what. A regular early schedule teaches responsibility.",
+      "For these reasons, I think schools should keep their current start times. Students can go to bed earlier if they need more sleep."
+    ]
+  },
+  {
+    "id": "school-good-1", "promptId": "school", "tier": "good",
+    "paragraphs": [
+      "Every weekday morning, millions of teenagers drag themselves out of bed before the sun is up, and the evidence suggests that this routine is quietly hurting them. Middle and high schools should start after 9:00 a.m., because a later bell supports students' health, safety, and learning.",
+      "The strongest argument is biological. During puberty, the body's internal clock shifts later, which means most teenagers do not feel sleepy until around eleven at night. The American Academy of Pediatrics has recommended that middle and high schools start no earlier than 8:30 a.m. for exactly this reason. A student who wakes at 6:00 is being asked to perform while their body still thinks it is the middle of the night.",
+      "The consequences show up in real schools. When a district in Seattle moved its high school start time later, researchers found that students slept about half an hour more per night and their grades improved. Less sleep is also linked to higher rates of anxiety and to more car accidents among young drivers.",
+      "Critics point out that a later start creates scheduling headaches for buses, sports, and working parents. These are real costs, but they are logistical problems, and logistics can be solved with planning, staggered bus routes, and later practice times. The harm from chronic sleep loss is harder to fix.",
+      "Schools exist to help students learn. It makes sense to schedule the day so that students are awake enough to do it."
+    ]
+  },
+  {
+    "id": "school-good-2", "promptId": "school", "tier": "good",
+    "note": "strong argument and evidence, but frequent comma splices, then/than, agreement and apostrophe errors",
+    "paragraphs": [
+      "Should school start later, I say it should and the reasons are health, learning and safety. Teenagers are not lazy, their bodies simply run on a different schedule then children and adults. Scientists have found that during adolescence the brain releases the sleep hormone melatonin later at night, so a sixteen year old often cannot fall asleep before eleven. If that student has to wake up at 5:45 to catch a bus, they lose two or three hours of sleep every single night, and the loss adds up over a week.",
+      "The effects on learning is easy to see. In my school the first class of the day has the most sleeping and the most late arrivals. Teachers spend the first ten minutes just getting students to wake up. A study of schools that moved their start times found that attendance went up and students were less likely to fall asleep in class, which means more time is actually spent learning.",
+      "There is also a safety issue. Drowsy driving is a serious danger for teenage drivers, and studies have connected later start times with fewer car crashes in that age group.",
+      "The main objection is that a later start will disrupt sports and after school jobs. But schools could shorten the gap by adjusting practice schedules, and many teams already practice under lights in the evening. Its a small price for healthier students.",
+      "In the end, the schedule should fit the students and not the other way around."
+    ]
+  },
+  {
+    "id": "school-good-3", "promptId": "school", "tier": "good",
+    "note": "clean and well organized, evidence somewhat generic, plain style",
+    "paragraphs": [
+      "Middle and high schools should begin after 9:00 a.m. Doing so would improve students' sleep, their academic performance, and their overall well-being.",
+      "To begin with, later start times match how teenagers' bodies work. Research on adolescent sleep shows that teenagers naturally fall asleep later and need more hours of rest than adults, usually between eight and ten. When school starts at 7:30 or earlier, most teens cannot get enough sleep, no matter how disciplined they are.",
+      "Additionally, more sleep leads to better learning. Students who are rested can pay attention, remember new information, and regulate their emotions more easily. Several districts that experimented with later start times reported higher attendance rates and fewer students tardy to first period. These results suggest that the schedule itself, not just student effort, plays a role in success.",
+      "Opponents argue that later start times would interfere with athletics and family schedules. While these concerns deserve attention, they can be addressed through flexible planning. Sports practices can be moved, and communities can adjust bus routes. Meanwhile, the health benefits of sleep last for years.",
+      "In conclusion, a start time after 9:00 a.m. is a reasonable and research-backed change. Schools should make the switch to support their students' health and success."
+    ]
+  },
+  {
+    "id": "school-good-4", "promptId": "school", "tier": "good",
+    "paragraphs": [
+      "I used to think that school start times were just something you had to live with, like homework or cafeteria pizza. Then I looked at what sleep scientists actually say, and now I am convinced that schools should start after 9:00 a.m.",
+      "The main problem is a mismatch between the school day and the teenage body. Around puberty, the brain shifts the body clock about two hours later. That is not a habit or a choice; it is biology. So a teenager who is told to be in class at 7:30 is being asked to think algebra at what feels like 5:30 in the morning. No wonder so many of us stare at the clock during first period.",
+      "The costs of ignoring this are serious. Sleep-deprived students are more likely to struggle with attention, mood, and memory. Doctors' groups, including the American Academy of Pediatrics, have urged schools to start later for these reasons. Some districts that followed this advice saw improvements in attendance and even test scores.",
+      "Of course, changing start times is not free. Bus routes must be redesigned, and afterschool sports may finish under the lights. Yet these are problems of scheduling, and schools solve scheduling problems all the time. Nobody has ever solved the problem of a sleepy brain by asking it to try harder.",
+      "School should be a place where students can succeed, and that begins with letting them wake up."
+    ]
+  },
+  {
+    "id": "school-good-5", "promptId": "school", "tier": "good",
+    "paragraphs": [
+      "Although the science of teenage sleep is real, moving the school day to after 9:00 a.m. is not the solution it appears to be, and schools should think twice before doing it.",
+      "The proposal rests on a good idea: teenagers need more sleep. But a later start does not guarantee later wake-ups and earlier bedtimes; it simply shifts the whole day. If school ends at 4:30 instead of 3:00, students who play sports or work part-time will finish later, eat dinner later, do homework later, and go to bed later. The extra morning sleep may be cancelled out by a shorter, busier evening.",
+      "The second concern is fairness. Families with two working parents or with long commutes depend on the current schedule, which lines up with the workday and with elementary schools. A later high school start can leave teenagers home alone in the morning, or force parents to change their jobs. Wealthier families can adapt; poorer ones often cannot.",
+      "Supporters cite studies showing improved attendance, and these results deserve to be taken seriously. Still, many of those studies were short and looked at individual districts, so they cannot prove that the same result would happen everywhere.",
+      "Instead of changing the whole schedule, schools could offer flexible options such as a later first period for older students, sleep education, and limits on late-night homework. These steps address the real problem without the disruption of a full change.",
+      "A thoughtful solution should fit the community, not a headline."
+    ]
+  },
+  {
+    "id": "school-excellent-1", "promptId": "school", "tier": "excellent",
+    "paragraphs": [
+      "At 6:15 on a school morning, a sixteen-year-old's body is doing something remarkable: it is still producing melatonin, the hormone of the night. That single fact, which comes out of decades of sleep research, is the strongest reason why middle and high schools should start after 9:00 a.m. The current early bell is not a neutral tradition. It is a policy that asks adolescents to work against their own biology.",
+      "Puberty delays the body's internal clock by roughly two hours, so most teenagers cannot fall asleep before eleven, yet they still need eight to ten hours of rest. An alarm at 5:45 therefore steals sleep that no amount of discipline can restore. The American Academy of Pediatrics has called insufficient sleep among adolescents a public health issue and recommends start times no earlier than 8:30. The results of acting on such advice are encouraging. When Seattle's high schools moved their bell later, a University of Washington team found that students slept about thirty minutes more each night, and their median grades and attendance rose.",
+      "The sharpest objection is logistical. Later bells mean later dismissals, disrupted bus schedules, and conflicts with athletics and jobs. It is a fair concern, and it explains why so many districts hesitate. But it confuses the difficulty of a change with the value of it. Districts already reroute buses every year, and practices can be scheduled around daylight. By contrast, no schedule can make up for years of chronic sleep loss, which is linked with depression, drowsy-driving crashes, and lower achievement.",
+      "A school day is a tool that exists for learning; it should be designed around the people who use it. Moving the first bell after 9:00 is a modest adjustment that lets students arrive not merely present, but awake."
+    ]
+  },
+  {
+    "id": "school-excellent-2", "promptId": "school", "tier": "excellent",
+    "paragraphs": [
+      "Every argument about school start times eventually becomes an argument about who gets to be tired. Right now, the answer is teenagers. We ask them to be alert at 7:30, we grade them on how well they concentrate, and then we are surprised when the students who slept least perform worst. A later start, after 9:00 a.m., would fix a problem the schedule itself creates.",
+      "The scientific case is straightforward. Around puberty the body clock shifts later, so a teenager's natural rhythm has them falling asleep near eleven and waking near eight. Cut that sleep short and the consequences pile up: trouble with memory and attention, higher risk of depression, and drowsy-driving accidents among new drivers. Pediatric groups have recommended start times of 8:30 or later for these reasons, and districts that adopted them, including in Seattle, reported more sleep, better attendance, and higher grades.",
+      "It is worth taking the opposing view seriously, because it has a point. A later start compresses the afternoon; athletics, jobs, and family duties all get squeezed. Yet the burden of that squeeze falls unevenly. Students from affluent families are already able to buy tutoring, sleep in on weekends, and drive themselves. Those who work after school or care for siblings have the least slack, and they are the ones for whom a rigid early morning is hardest to survive. In that sense, a later bell is not a luxury but an equalizer.",
+      "Change will require work: new bus routes, adjusted practice times, honest conversations with parents. But schools are supposed to be places that adapt to what students need. If the evidence says teenagers learn better with more sleep, then the sensible response is to move the bell, not to keep telling teenagers to try harder."
+    ]
+  },
+  {
+    "id": "school-excellent-3", "promptId": "school", "tier": "excellent",
+    "note": "argues against a later start; nuanced and well supported",
+    "paragraphs": [
+      "Nearly everyone agrees that teenagers are tired. The harder question is whether pushing the first bell to 9:00 a.m. would actually cure it, and on the evidence I think the answer is: not by itself, and not without costs that fall on the students least able to bear them.",
+      "The case for delay is real. Adolescent body clocks shift later, and pediatric organizations have recommended start times no earlier than 8:30. Studies in districts that made the change, such as Seattle, found students sleeping roughly half an hour more. I do not dispute the science. What I question is the leap from 'teenagers need more sleep' to 'the bell should move.'",
+      "Consider the day as a whole. A school that starts at 9:00 typically ends near 4:00 or later. Athletes practice into the evening, students with jobs begin later shifts, and homework slides toward midnight. Some of the extra morning sleep is simply spent again at night, which may explain why sleep gains in these studies, while positive, are modest. The gains also come with trade-offs for families: parents who leave for work at 7:30 must either arrange supervision or leave teenagers at home unattended, and districts often have to move the elementary schools' schedule in exchange, pushing young children into the darkness.",
+      "None of this means that nothing should be done. Schools could combine later start times with flexible arrangements, such as later first periods for upper grades, limits on late homework, and sleep education. The goal should be more sleep, not simply a later clock. A policy that cannot say how its benefits reach the students who need them most has not yet earned the label of reform."
+    ]
+  },
+  {
+    "id": "school-excellent-4", "promptId": "school", "tier": "excellent",
+    "paragraphs": [
+      "Ask a room of high school seniors what they want most and the honest answer is not a better cafeteria or a longer lunch. It is one more hour of sleep. That wish is not laziness. It is a biological signal, and schools should start after 9:00 a.m. in order to respect it.",
+      "Here is what the research says. When adolescents reach puberty, their circadian rhythm slides later by about two hours, so their brains stay alert late into the evening and resist waking early. Forcing a 7:30 start onto that rhythm produces chronic sleep debt, which affects attention, memory, mood, and even physical health. The American Academy of Pediatrics therefore recommends that middle and high schools begin no earlier than 8:30. Districts that have listened, like Seattle's, saw students gain sleep and improve attendance and grades. Those are precisely the outcomes schools claim to care about.",
+      "Skeptics answer that a later day disrupts sports, jobs, and bus routes. They are right that it does. But every solution to an important problem has a price, and in this case the price is administrative, while the current one is paid in students' health. Practices can be held under lights, buses can be re-routed as they are every August, and employers of student workers can be asked to adjust. The chronic sleep loss of an entire generation cannot be rescheduled.",
+      "A school is a promise that adults will organize the day around learning. Keeping the alarm at 5:45 breaks it, and moving the bell to nine keeps it."
+    ]
+  },
+  {
+    "id": "school-excellent-5", "promptId": "school", "tier": "excellent",
+    "paragraphs": [
+      "Debates about school start times often treat sleep as a personal virtue: get to bed earlier, the argument goes, and the problem disappears. This misunderstands the science. Adolescent circadian rhythms shift later at puberty, which means the typical teenager cannot fall asleep at ten no matter how virtuous their habits. Because the early bell demands a wake-up the body is not ready for, middle and high schools should start after 9:00 a.m.",
+      "The evidence is consistent across several fields. Sleep researchers document the delay in melatonin release; pediatricians, through the American Academy of Pediatrics, recommend a start of 8:30 or later; and district experiments, including a well-known one in Seattle, report that later starts increase sleep by about half an hour and are followed by improvements in attendance and grades. Each source alone is limited, but together they point in one direction.",
+      "Two objections deserve an answer. The first is that a later school day pushes everything else later, so the extra sleep will be spent on late-night homework. That may happen in some households, but it suggests pairing the new schedule with homework guidelines, not keeping the old schedule. The second is cost: buses, sports, and family routines all have to be rearranged. These changes are inconvenient, but they are one-time adjustments, while the benefits of healthier sleep accrue every day for every student.",
+      "Policy should follow the best available evidence about how young people function. If adults acknowledge that a person's body clock is not a moral failing, the conclusion is hard to avoid: the school day should start when students are awake enough to learn."
+    ]
+  }
+]

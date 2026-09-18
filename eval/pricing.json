@@ -1,0 +1,8 @@
+{
+  "note": "Left null on purpose: prices depend on the Hugging Face provider that served the request and change over time. Fill these from the provider's price page and record where and when you read them.",
+  "inputPerMTok": null,
+  "outputPerMTok": null,
+  "currency": "USD",
+  "source": null,
+  "asOf": null
+}

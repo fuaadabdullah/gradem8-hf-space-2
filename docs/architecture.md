@@ -1,36 +1,35 @@
-# Architecture
+# GradeM8 architecture
 
-## Overview
+GradeM8 v1 is a stateless essay-grading workflow. The browser submits a rubric plus one pasted essay or a batch of PDF, DOCX, or TXT files to `POST /api/grade`. The server extracts text, validates the rubric, grades each submission in demo or provider mode, and returns reports for teacher review.
 
-Gradem8 HF Space 2 is a focused integration demo that routes browser prompts to Hugging Face Inference through a server-only API route.
+## Trust boundaries
 
-## Components
-
-- `app/page.tsx`: client interface for prompt entry, model selection, and output display.
-- `app/api/infer/route.ts`: secure server endpoint that validates input, calls Hugging Face, and normalizes responses.
-- `docs/`: architecture, setup, and impact documentation.
-- deployment config: `vercel.json` for build/runtime behavior.
+1. Browser input is untrusted. Files and pasted essays are size- and type-bounded.
+2. The server owns rubric criteria and maximum scores.
+3. Student writing is data, not instructions. Grading prompt construction and injection detection live in `lib/grading/prompt.ts`.
+4. Model output is untrusted. `lib/grading/validate.ts` clamps criterion scores and recomputes totals.
+5. The v1 application does not persist submissions, reports, or rubrics.
 
 ## Request flow
 
-1. User submits prompt from browser UI.
-2. Client sends `POST /api/infer` with prompt and optional model.
-3. Server route validates prompt and model, then reads `HUGGINGFACE_API_TOKEN` from server environment.
-4. Server route calls `https://router.huggingface.co/v1/chat/completions`.
-5. Server route maps provider response into normalized JSON:
-   - success: `output`, `model`, `latencyMs`
-   - error: `error`, `code`
-6. UI renders output or actionable error state.
+1. Teacher enters a rubric and pastes an essay or selects files.
+2. `POST /api/grade` parses the multipart request.
+3. PDF, DOCX, and TXT content is extracted server-side and bounded.
+4. The rubric is parsed into server-authoritative criteria.
+5. Demo mode produces deterministic review data when no provider token is configured; provider mode sends the rubric and essay to the server-configured model.
+6. The browser shows extracted text, criterion scores, maximums, explanations, evidence, strengths, improvements, and total score.
+7. A teacher can override the total and download the final report locally.
 
-## Deployment topology
+## Failure behavior
 
-- Frontend + API route deployed together on Vercel.
-- Hugging Face API token stored in Vercel environment variables (never exposed to client bundle).
-- Optional default model configured via `HUGGINGFACE_MODEL_DEFAULT`.
+Malformed forms, unsupported or oversized files, malformed rubrics, empty submissions, too many submissions, provider errors, empty model output, and timeouts return explicit error codes. Incomplete or untrusted model output must never silently become a final grade.
 
-## Reliability and failure handling
+## Related controls
 
-- Empty prompt and invalid model rejected at API edge with `400`.
-- Missing server token returns a deterministic demo response so the UI remains usable.
-- Upstream transient errors are surfaced with normalized codes (`RATE_LIMITED`, `MODEL_LOADING`, `UPSTREAM_ERROR`).
-- UI presents recoverable error messages without crashing render flow.
+- [Standards baseline](./standards.md)
+- [Privacy and retention](./privacy.md)
+- [Grading prompt controls](../lib/grading/prompt.ts)
+- [Server-side grading validation](../lib/grading/validate.ts)
+- [Grading integrity contract](./grading-integrity.md)
+- [Grading engine entry point](../lib/grading/engine.ts)
+

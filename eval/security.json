@@ -1,0 +1,28 @@
+{
+  "criticalOpen": 0,
+  "reviewedAt": "2026-09-18",
+  "reviewer": "Codex",
+  "scope": [
+    "multipart file type and size validation",
+    "server-side secret handling",
+    "prompt injection boundaries",
+    "server-authoritative rubric maxima and totals",
+    "provider timeout and failure handling",
+    "no-persistence demo architecture",
+    "dependency audit"
+  ],
+  "findings": [
+    {
+      "severity": "high",
+      "status": "pre-release requirement",
+      "finding": "Authentication, school tenancy, and access control are not implemented.",
+      "disposition": "The portfolio demo must not process shared school records until those controls and a district review exist."
+    },
+    {
+      "severity": "medium",
+      "status": "pre-release requirement",
+      "finding": "The benchmark still needs human reference labels and a real provider run.",
+      "disposition": "No accuracy claim or v1 release decision is made from demo-mode results."
+    }
+  ]
+}

@@ -21,4 +21,9 @@ jobs:
           cache: pnpm
 
       - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm test
+      - run: pnpm exec tsc --noEmit --incremental false
+      - run: node eval/validate.mjs
+      - run: pnpm audit --audit-level=high
       - run: pnpm build

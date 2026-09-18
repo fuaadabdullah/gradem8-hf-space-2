@@ -1,0 +1,33 @@
+[
+  {
+    "id": "argumentative",
+    "title": "Argumentative essay",
+    "criteria": [
+      { "name": "Thesis and position", "maxScore": 4, "description": "a clear, arguable position on the question that stays consistent through the essay." },
+      { "name": "Evidence and reasoning", "maxScore": 4, "description": "specific, relevant support (facts, examples, logic) that actually backs the claims, including a fair answer to the other side." },
+      { "name": "Organization", "maxScore": 4, "description": "a logical order with an introduction, paragraphs that each do a job, transitions, and a conclusion." },
+      { "name": "Language and style", "maxScore": 4, "description": "precise word choice, varied sentences, and a tone suited to persuading a reader." },
+      { "name": "Conventions", "maxScore": 4, "description": "grammar, spelling, punctuation and capitalization." }
+    ]
+  },
+  {
+    "id": "literary-analysis",
+    "title": "Literary analysis essay",
+    "criteria": [
+      { "name": "Interpretation", "maxScore": 4, "description": "a defensible claim about how the theme is developed, going beyond plot summary." },
+      { "name": "Textual evidence", "maxScore": 4, "description": "accurate, specific references to events, characters or lines from the play." },
+      { "name": "Analysis", "maxScore": 4, "description": "explains how the evidence supports the claim, rather than only saying what happens." },
+      { "name": "Organization and style", "maxScore": 4, "description": "logical structure, transitions and clear academic prose, including correct mechanics." }
+    ]
+  },
+  {
+    "id": "personal-narrative",
+    "title": "Personal narrative",
+    "criteria": [
+      { "name": "Narrative development", "maxScore": 4, "description": "a clear sequence of events with concrete detail and sensible pacing." },
+      { "name": "Reflection and insight", "maxScore": 4, "description": "genuine thought about what the experience taught the writer and why it mattered." },
+      { "name": "Voice and word choice", "maxScore": 4, "description": "a natural, distinctive voice and vivid, precise language." },
+      { "name": "Conventions", "maxScore": 4, "description": "grammar, spelling, punctuation and paragraphing." }
+    ]
+  }
+]

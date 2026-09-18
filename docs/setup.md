@@ -14,6 +14,10 @@ Create `.env.local` from `.env.example`.
 |---|---|---|---|
 | `HUGGINGFACE_API_TOKEN` | Yes | n/a | Server-only token for Hugging Face Inference API |
 | `HUGGINGFACE_MODEL_DEFAULT` | No | `meta-llama/Llama-3.1-8B-Instruct` | Default model used when client does not override |
+| `GRADING_RATE_LIMIT_PER_MINUTE` | No | `60` | Per-instance, per-IP limit for `POST /api/grade`. `0` disables it (offline benchmark runs only) |
+
+Grading integrity behavior, response schema and failure codes are documented in
+[grading-integrity.md](./grading-integrity.md).
 
 ## Install and run locally
 
