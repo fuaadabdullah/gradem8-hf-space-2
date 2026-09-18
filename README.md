@@ -32,6 +32,18 @@ pnpm install
 pnpm dev
 ```
 
+## Testing
+
+The API route has focused Vitest coverage for request validation, model aliasing, demo mode, rate limiting, upstream failures, and normalized responses.
+
+```bash
+pnpm test
+```
+
+The model selector intentionally presents two curated choices for this demo. The server accepts any valid Hugging Face model identifier and can use `HUGGINGFACE_MODEL_DEFAULT` when no model is supplied.
+
+The root `code-security.datadog.yaml` file is an intentional SAST configuration for repository security scanning.
+
 ## Deployment
 
 Deployment prerequisites and environment setup are documented in [docs/setup.md](docs/setup.md).
