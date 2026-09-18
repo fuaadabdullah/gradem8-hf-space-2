@@ -5,7 +5,7 @@ const nextConfig = {
   // breaks those paths at runtime: every PDF upload fails with "Setting up fake worker failed".
   // Keeping them external means they are required from node_modules, where their layout is intact.
   // Regression test: tests/grade-route-files.test.ts, and eval/run.mjs reports the parse rate per format.
-  serverExternalPackages: ["pdf-parse", "mammoth"],
+  serverExternalPackages: ["pdf-parse", "mammoth", "@napi-rs/canvas"],
 };
 
 export default nextConfig;
