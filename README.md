@@ -32,6 +32,8 @@ pnpm test
 
 The test suite covers grading input boundaries, file extraction, rubric parsing, server-side score validation, prompt-injection defenses, evaluation fixtures, and the legacy inference route. The root `code-security.datadog.yaml` file is an intentional SAST configuration for repository security scanning.
 
+Passing tests verify the integrity invariants (server-owned maxima and totals, sanitized output, fail-closed validation) and the harness plumbing. They are **not** evidence that the grading is accurate, and the suite is not a substitute for the human-review step described in [LIMITATIONS.md](LIMITATIONS.md).
+
 ## Deployment
 
 Deployment prerequisites and environment setup are documented in [docs/setup.md](docs/setup.md).
