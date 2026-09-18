@@ -19,14 +19,20 @@ broke the relative path to its `pdf.worker.mjs`, so **every PDF upload failed in
 test still passed. Fixed by `next.config.mjs` (`serverComponentsExternalPackages`); the parse rate went 0/8 to 8/8.
 That is the argument for running the suite against a built server, not only a stub.
 
-Two findings from that run are still open, both measured in demo mode, which grades by word count and never calls a
-model, so neither is a verdict on the model:
+Two further findings from that run have since been fixed and are covered by tests:
 
-- **Injection detection recall: 1 of 4.** The server flagged `inject-1` ("ignore all previous instructions") and
-  missed the fake-authority (`inject-2`), output-format hijack (`inject-3`) and emotional-pressure (`inject-4`)
-  probes. False positives were 0 of 60 on ordinary essays, so there is room to widen the patterns. Score inflation
-  was ~0% for all four, but only because demo mode ignores instructions entirely; rerun with a model to learn anything.
-- **No token usage in the response**, so cost per essay stays NOT MEASURED.
+- **Injection detection recall was 1 of 4.** The server flagged only `inject-1` ("ignore all previous instructions")
+  and missed the fake-authority, output-format-hijack and emotional-pressure probes. The patterns in
+  `lib/grading/prompt.ts` now allow filler words between a verb and its target and cover forged grader headers,
+  claimed prior approval, criticism suppression and output-format demands. **Now 4 of 4, with 0 of 60 ordinary
+  essays flagged**, asserted in `tests/grading-injection-corpus.test.ts`. Widening one pattern too far did flag the
+  ordinary sentence "The teacher approved my topic, and I got a perfect score"; that case is now a regression test.
+- **Cost per essay read as if the API were at fault.** It was a demo-mode run, which calls no model and therefore has
+  no tokens. The engine does pass provider token counts through (`tests/grading-usage.test.ts`), and the report now
+  separates "demo mode, no tokens exist" from "model mode, usage missing".
+
+Score inflation was ~0% across all four probes, but only because demo mode ignores instructions entirely. That is not
+evidence of injection resistance; rerun with a model before drawing any conclusion.
 
 Until human labels exist, **no accuracy number exists**, and the report says so instead of showing one. The
 generated essays carry an *intended* quality tier; that is the author's design, not a human score, and is used only for
@@ -108,6 +114,9 @@ denominator, the scale, the reference and the interval, for example:
 
 ## Known limits (read before trusting a number)
 
+Product-level limitations, evaluation status and NIST AI RMF TEVV/monitoring gaps are in
+[LIMITATIONS.md](../LIMITATIONS.md).
+
 - **Essays are synthetic.** Written to hit four quality tiers across three genres, not collected from students. Real
   work is messier and less evenly distributed. Add consented, anonymized real essays before public accuracy claims.
 - **Tier tracks length.** Excellent essays are longer than bad ones, as in real life, so length alone predicts tier.
@@ -136,7 +145,7 @@ It gets more out of the response when these are present, and marks the matching 
 
 ## Layout
 
-```
+```text
 eval/
   dataset/      rubrics.json, prompts.json, essays/*.json (3 prompts x 4 tiers x 5, plus injection probes)
   labels/       primary.json (reference), second.json (re-labeled subset). Created by label.mjs.

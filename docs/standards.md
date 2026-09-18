@@ -10,7 +10,7 @@ GradeM8 uses the AI RMF functions as its risk loop:
 
 | Function | GradeM8 v1 practice | Evidence |
 |---|---|---|
-| Govern | Keep the product scope, human-review rule, provider decision, and retention policy explicit. | This document, [privacy policy](./privacy.md), README |
+| Govern | Keep the product scope, human-review rule, provider decision, and retention policy explicit. | This document, [privacy policy](./privacy.md), README, [limitations](../LIMITATIONS.md) |
 | Map | Treat student writing, rubric manipulation, prompt injection, bad extraction, model failure, and unfair feedback as product risks. | [grading prompt](../lib/grading/prompt.ts), route limits, error codes |
 | Measure | Test rubric parsing, score bounds, output integrity, adversarial submissions, and failure handling. | `tests/grading-engine.test.ts`, `tests/grade-route-integrity.test.ts`, `eval/` |
 | Manage | Fail closed on incomplete model output, recompute totals server-side, show evidence, and require teacher review/override. | [validation module](../lib/grading/validate.ts), report UI |

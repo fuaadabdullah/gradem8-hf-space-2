@@ -100,6 +100,16 @@ export function renderReport(result) {
   else if (c.perEssay == null) out.push(`- Cost/essay: tokens measured (mean ${Math.round(c.meanPromptTokens)} in / ${Math.round(c.meanCompletionTokens)} out) but no prices set in eval/pricing.json.`);
   else out.push(`- Cost/essay: ${c.perEssay.toFixed(5)} ${c.currency} (mean ${Math.round(c.meanPromptTokens)} in / ${Math.round(c.meanCompletionTokens)} out tokens; prices: ${c.priceSource}).`);
 
+  out.push(`\n## Security review`);
+  const sec = m.securityReview;
+  if (!sec) out.push("NOT MEASURED - no eval/security.json. The gate counts critical findings; a missing file is not a pass.");
+  else {
+    out.push(`Reviewed by ${sec.reviewer || "unnamed reviewer"} on ${sec.reviewedAt || "an unrecorded date"}; ${sec.criticalOpen} critical finding(s) open.${sec.scope.length ? ` Scope: ${sec.scope.join("; ")}.` : ""}`);
+    if (sec.openFindings.length) {
+      out.push(`\nThe gate counts critical findings only, so these remain open and do not block it:\n${table(["Severity", "Status", "Finding"], sec.openFindings.map((f) => [f.severity, f.status, f.finding]))}`);
+    } else out.push("No open findings recorded.");
+  }
+
   out.push(`\n## Sanity checks (not accuracy)`);
   out.push(`Mean model score by intended tier: ${m.tierCheck.rows.map((x) => `${x.tier} ${x.meanPctOfMax == null ? "n/a" : num(x.meanPctOfMax, 1) + "%"}`).join(", ")}. Spearman rho vs tier ${num(m.tierCheck.spearman)}; ordering ${m.tierCheck.monotonic ? "monotonic" : "NOT monotonic"}. Intended tier is the author's design, not a human score.`);
   const d = m.injectionDetection;

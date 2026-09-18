@@ -69,7 +69,7 @@ Response:
 
 GradeM8 provides **grading assistance, not authoritative academic decisions**. It proposes criterion scores, evidence and feedback; an instructor must review each report and accept the total before a grade is finalized. The recomputed total and the `teacher-approved` label are client-side conveniences, not a server-side attestation.
 
-**Performance has been evaluated against 0 human-scored essays.** The benchmark (60 synthetic essays plus 4 injection probes), the evaluation harness and the release gate exist; human reference labels do not. There is therefore **no accuracy figure for this project**, the accuracy gates report NOT MEASURED, and the last recorded end-to-end run was demo mode (no model call) with a verdict of NOT READY.
+**Performance has been evaluated against 0 human-scored essays.** The benchmark (60 synthetic essays plus 4 injection probes), the evaluation harness and the release gate exist; human reference labels do not. There is therefore **no accuracy figure for this project**, the accuracy gates report NOT MEASURED, and the last recorded end-to-end run was demo mode (no model call) with a verdict of NOT READY. A security review is recorded with 0 critical findings open, and its two pre-release requirements (authentication and school tenancy; human labels and a real provider run) are still unresolved.
 
 **Scores may vary between model versions.** Every report records its `model_version`, decoding runs at `temperature: 0.1` rather than 0, and hosted weights change under a stable model name, so a result is only meaningful for the model, engine version, rubric and date that produced it.
 

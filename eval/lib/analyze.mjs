@@ -339,7 +339,21 @@ export function analyze({ run, dataset, labels = {}, gate, pricing = {}, securit
     falsePositiveIds: coreRecs.filter((r) => r.injection.detected).map((r) => r.essayId),
   };
 
-  const metrics = { reliability, structure, parse, accuracy, humanAgreement, repeatability, latency, cost, tierCheck, injection, injectionDetection };
+  // The gate counts only critical findings, per the v1 target. Open findings at other severities are
+  // surfaced here so "Critical security bugs: 0 PASS" is never read as "the security review was clean".
+  const securityReview = security
+    ? {
+        reviewer: security.reviewer ?? null,
+        reviewedAt: security.reviewedAt ?? null,
+        criticalOpen: security.criticalOpen ?? null,
+        scope: Array.isArray(security.scope) ? security.scope : [],
+        openFindings: (Array.isArray(security.findings) ? security.findings : [])
+          .filter((f) => !/^(closed|resolved|fixed)$/i.test(String(f?.status ?? "")))
+          .map((f) => ({ severity: String(f?.severity ?? "unspecified"), status: String(f?.status ?? "open"), finding: String(f?.finding ?? "") })),
+      }
+    : null;
+
+  const metrics = { reliability, structure, parse, accuracy, humanAgreement, repeatability, latency, cost, tierCheck, injection, injectionDetection, securityReview };
   const gates = evaluateGates(gate, gateInputs(metrics, security));
   return { meta: run.meta, secondPassPlanned: secondPass.length, metrics, gates, verdict: verdict(gates) };
 }

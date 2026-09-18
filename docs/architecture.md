@@ -28,6 +28,7 @@ Malformed forms, unsupported or oversized files, malformed rubrics, empty submis
 
 - [Standards baseline](./standards.md)
 - [Privacy and retention](./privacy.md)
+- [Limitations](../LIMITATIONS.md)
 - [Grading prompt controls](../lib/grading/prompt.ts)
 - [Server-side grading validation](../lib/grading/validate.ts)
 - [Grading integrity contract](./grading-integrity.md)

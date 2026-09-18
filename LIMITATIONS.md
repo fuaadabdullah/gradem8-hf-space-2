@@ -1,8 +1,8 @@
 # GradeM8 limitations
 
-Last reviewed: 2026-09-18. Code: commit `0fd7fdc` plus the v1 grading-engine work in the working tree.
+Last reviewed: 2026-09-18. Code: commit `75e1edd` plus the documentation and harness work in the working tree.
 Benchmark dataset hash: `80373ab5ea0b`. Last recorded end-to-end run:
-`eval/runs/20260918T183454-default-model.json` (demo mode).
+`eval/runs/20260918T184804-default-model.json` (demo mode, no model call).
 
 This file exists because an essay grader that claims to be authoritative is a worse product than one that
 states its own error budget. Everything below is either measured, bounded by code, or explicitly
@@ -35,7 +35,7 @@ compare the model against.
 | Benchmark essays | Done: 60 core + 4 injection probes (3 prompts x 4 quality tiers, 3 rubrics) | `eval/dataset/`, hash `80373ab5ea0b` |
 | Harness, metrics, release gate | Done | `eval/lib/`, `eval/gate.json` |
 | Unit, route and integrity tests | Done | `tests/` (`pnpm test`) |
-| End-to-end run against the real API | Done in **demo mode only** | `eval/runs/20260918T183454-default-model.json` |
+| End-to-end run against the real API | Done in **demo mode only** | `eval/runs/20260918T184804-default-model.json` |
 | **Human reference scores** | **Not done: 0 of 60 essays labeled** | `eval/labels/primary.json` does not exist |
 | Second labeling (human disagreement ceiling) | Not done | `eval/labels/second.json` does not exist |
 | Real model run | Not done: requires a live server plus `HUGGINGFACE_API_TOKEN` | - |
@@ -43,7 +43,8 @@ compare the model against.
 
 So there is no accuracy figure for this project, and none should be quoted from it. The harness is built
 to say NOT MEASURED rather than to print a number it cannot support, and the last recorded run's verdict
-was **NOT READY** (4 pass, 3 not measured, 1 documented).
+was **NOT READY**: 5 gates pass, 2 are not measured, 1 is documented. The two gates that cannot be answered
+yet are exactly the two accuracy gates.
 
 ### What the recorded demo-mode run did measure
 
@@ -59,12 +60,15 @@ this.
 | Request success rate | > 99% | 100.0% (n=64) | PASS |
 | Within +/-1 rubric point | > 90% | n/a | NOT MEASURED: needs human labels |
 | Weighted kappa (quadratic) | >= 0.70 | n/a | NOT MEASURED: needs human labels |
-| P95 grading latency | documented | 5 ms (demo, client-side) | DOCUMENTED |
-| Critical security bugs | 0 | n/a | NOT MEASURED: needs a recorded review |
+| P95 grading latency | documented | 6 ms (demo, client-side) | DOCUMENTED |
+| Critical security bugs | 0 | 0 critical open (reviewed 2026-09-18) | PASS |
 
-Two caveats on that table: the essays are synthetic, so they do not represent real student writing; and
-the prompt-injection patterns have been revised since the run was recorded, so its detection counts
-(1 of 4 probes flagged, 0 of 60 ordinary essays flagged) should be refreshed rather than quoted.
+Three caveats on that table. The essays are synthetic, so they do not represent real student writing. The
+security gate counts critical findings only: the review recorded on 2026-09-18 (`eval/security.json`) also
+left two `pre-release requirement` findings open (no authentication or school tenancy; no human labels or
+real provider run), which is why the verdict is still NOT READY. And the injection counts from this run
+(4 of 4 probes flagged, 0 of 60 ordinary essays flagged) are demo-mode detector measurements, not a model
+result, and the detector keeps changing, so refresh them by re-running the harness.
 
 ### How to replace N = 0 with a real number
 
@@ -107,7 +111,7 @@ model-vs-human agreement. Quote that sentence, never "X% accurate".
 
 Additional weaknesses that are not in the headline list:
 
-- **Prompt injection.** Detection is a regex heuristic: 16 patterns across 10 categories
+- **Prompt injection.** Detection is a regex heuristic: pattern sets across 10 categories
   (`instruction_override`, `score_demand`, `fake_authority`, `criticism_suppression`, `output_hijack`,
   `role_impersonation`, `prompt_exfiltration`, `rubric_tampering`, `delimiter_forgery`, `hidden_text`).
   Novel phrasing is missed, and ordinary classroom language can be flagged; a flag caps confidence at 0.5
@@ -123,7 +127,8 @@ Additional weaknesses that are not in the headline list:
 - **Accessibility.** WCAG 2.2 AA is a target, not a verified state: no screen-reader, keyboard-only, 200%
   zoom, contrast or automated audit of the rendered page has been recorded.
 - **Operations.** No authentication, tenancy, audit log or persistence, and the rate limiter is in-memory
-  and per serverless instance, so it is a speed bump rather than a quota.
+  and per serverless instance, so it is a speed bump rather than a quota. The recorded security review
+  (`eval/security.json`) lists these as pre-release requirements rather than closed items.
 - **Provider data handling.** In model mode the rubric and essay go to the configured provider. GradeM8
   makes no claim about that provider's retention, training use or subprocessors; see
   [privacy.md](./docs/privacy.md).
@@ -142,7 +147,7 @@ implements part of that loop and is explicit about the gaps. The mapping is main
 | Govern | Written scope, human-review rule, provider decision and retention policy; this limitations file | No owner, review cadence or change-control record for the model or the grading prompt |
 | Map | Documented risks: untrusted submissions, injection, bad extraction, model failure, unfair feedback | No risk register with owners or likelihood/impact ratings |
 | Measure | Unit, route and integrity tests; benchmark corpus; harness with a release gate; score bounds and output validation | No human reference labels, so no accuracy, agreement or bias measurement; repeatability and cost per essay NOT MEASURED |
-| Manage | Fail closed on incomplete output, server-recomputed totals, evidence per criterion, teacher review and override, explicit error codes | No monitoring, alerting, drift detection, incident process or rollback plan; no post-deployment audit of scores |
+| Manage | Fail closed on incomplete output, server-recomputed totals, evidence per criterion, teacher review and override, explicit error codes; a recorded security review with 0 critical findings open (`eval/security.json`) | No monitoring, alerting, drift detection, incident process or rollback plan; no post-deployment audit of scores; the review's two pre-release requirements (auth and tenancy, human labels) are unresolved |
 
 The practical consequence: **v1 is test- and document-oriented, not monitoring-oriented.** Verification
 exists for the integrity invariants (server-owned maxima and totals, sanitized output, fail-closed

@@ -222,6 +222,9 @@ See [standards.md](./standards.md) for the wider standards baseline.
 
 ## Known limitations
 
+Product-level limitations, evaluation status and the NIST AI RMF TEVV/monitoring gaps are in
+[LIMITATIONS.md](../LIMITATIONS.md). The list below is module-level: what this contract does not enforce.
+
 - Injection detection is a regex heuristic. It has false negatives (a novel phrasing is not
   flagged) and false positives (an essay quoting the phrase "ignore the rubric" can be
   flagged). It is a review signal, never a scoring input.
